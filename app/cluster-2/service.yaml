@@ -8,4 +8,4 @@ spec:
     app: cluster-1
   ports:
     - port: 8000
-      targetPort: 8000
+      targetPort: 80
