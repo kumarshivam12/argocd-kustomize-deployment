@@ -3,3 +3,4 @@ kind: Kustomization
 namespace: test-kustomization
 resources:
   - deployment.yaml
+  - service.yaml
