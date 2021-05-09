@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cluster-1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cluster-1
+  template:
+    metadata:
+      labels:
+        app: cluster-1
+    spec:
+      containers:
+        - name: cluster-1
+          image: nginx
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 8000
