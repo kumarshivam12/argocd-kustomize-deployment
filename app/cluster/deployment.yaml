@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: kumar1996/kubetest
+        image: kumar1996/kubetest:latest
         lifecycle:
           postStart:
             exec:
