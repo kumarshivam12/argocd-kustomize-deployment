@@ -14,7 +14,11 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: nginx
+        image: kshivam/1996:latest
+        lifecycle:
+          postStart:
+            exec:
+              command: ["/bin/sh", "-c", "curl -s https://consul.moengage.com/v1/kv/presto-test/config.properties  | jq -r '.[] | .Value' | base64 --decode > /etc/kube.properties"]
         resources:
           limits:
             memory: "128Mi"
